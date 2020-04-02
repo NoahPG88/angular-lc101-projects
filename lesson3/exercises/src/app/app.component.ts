@@ -12,4 +12,12 @@ export class AppComponent {
   height = 0;
   width = 0;
   message = 'Space shuttle ready for takeoff!';
+
+
+  takeOff(){
+    window.confirm("Confirm that the shuttle is ready for takeoff.");
+    this.message = "Shuttle in flight";
+    this.color = "blue";
+    this.height+=10000
+  }
 }
