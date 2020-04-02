@@ -17,16 +17,16 @@
 
       <div class="col-6">
          <div class="shuttle-background" [style.background-color]="color" border-style="hidden">
-            <img src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="x+'px'" [style.bottom]="y+'px'"/>
+            <img #rocketImage src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>
          </div>
       </div>
 
       <div class="col-3">
          <div class="container-right"b>
-            <button (click)="moveUp()">Up</button>
-            <button (click)="moveDown()">Down</button>
-            <button (click)="moveRight()">Right</button>
-            <button (click)="moveLeft()">Left</button>
+            <button (click)="moveRocket(rocketImage, 'up')">Up</button>
+            <button (click)="moveRocket(rocketImage, 'down')">Down</button>
+            <button (click)="moveRocket(rocketImage, 'right')">Right</button>
+            <button (click)="moveRocket(rocketImage, 'left')">Left</button>
             <h3>Space Shuttle Height</h3>
             <p>{{height}}</p>
          </div>

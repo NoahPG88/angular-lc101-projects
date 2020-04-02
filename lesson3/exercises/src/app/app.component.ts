@@ -25,39 +25,42 @@ export class AppComponent {
     }
   }
 
-  land(){
+  land(rocketImage){
     window.alert("The shuttle is landing. Landing gear engaged.");
     this.message = "The shuttle has landed.";
     this.color = "green";
     this.height = 0;
+    rocketImage.style.bottom = '0px';
   }
 
-  abort(){
+  abort(rocketImage){
     let confirm = window.confirm("Are you certain you would like to abort the mission?");
     if(confirm){
     this.message = "Mission aborted";
     this.color = "red";
     this.height = 0;
+    rocketImage.style.bottom = '0px';
     }
   }
 
-  moveUp(){
-    this.y += 10;
-    this.height += 10000
+  moveRocket(rocketImage, direction){
+    if(direction === 'right'){
+      let movement = parseInt(rocketImage.style.left)+10+'px';
+      rocketImage.style.left = movement;
+      this.width = this.width + 10000;
+    } else if (direction === 'left'){
+      let movement = parseInt(rocketImage.style.left)-10+'px';
+      rocketImage.style.left = movement;
+      this.width = this.width - 10000;
+    } else if (direction === 'up'){
+      let movement = parseInt(rocketImage.style.bottom)+10+'px';
+      rocketImage.style.bottom = movement;
+      this.height += 10000;
+    }  else if (direction === 'down'){
+      let movement = parseInt(rocketImage.style.bottom)-10+'px';
+      rocketImage.style.bottom = movement;
+      this.height -= 10000;
+    }
   }
 
-  moveDown(){
-    this.y -= 10;
-    this.height -= 10000
-
-  }
-
-  moveLeft(){
-    this.x -= 10;
-  }
-
-  moveRight(){
-    this.x += 10;
-    console.log(x);
-  }
 }
