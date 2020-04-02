@@ -20,4 +20,11 @@ export class AppComponent {
     this.color = "blue";
     this.height+=10000
   }
+
+  land(){
+    window.alert("The shuttle is landing. Landing gear engaged.");
+    this.message = "The shuttle has landed.";
+    this.color = "green";
+    this.height = 0;
+  }
 }
