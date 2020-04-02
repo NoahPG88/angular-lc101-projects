@@ -12,6 +12,8 @@ export class AppComponent {
   height = 0;
   width = 0;
   message = 'Space shuttle ready for takeoff!';
+  x = 0;
+  y = 0;
 
 
   takeOff(){
@@ -37,5 +39,25 @@ export class AppComponent {
     this.color = "red";
     this.height = 0;
     }
+  }
+
+  moveUp(){
+    this.y += 10;
+    this.height += 10000
+  }
+
+  moveDown(){
+    this.y -= 10;
+    this.height -= 10000
+
+  }
+
+  moveLeft(){
+    this.x -= 10;
+  }
+
+  moveRight(){
+    this.x += 10;
+    console.log(x);
   }
 }
